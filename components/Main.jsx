@@ -16,6 +16,8 @@ function Main() {
 
   // la variabilie di stato
   const [formAuthors, setformAuthors] = useState(initialFormAuthors);
+  // creo la variabile per settare l'alert
+  const [alert, setAlert] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -34,6 +36,12 @@ function Main() {
     axios.post(link, formAuthors).then((resp) => {
       console.log("invio dei dati riuscito " + resp.data);
       setformAuthors(initialFormAuthors);
+      // adesso setto l'alert
+      setAlert({
+        show: true,
+        status: "success",
+        text: "richiesta inviata con successo",
+      });
     });
   };
 
