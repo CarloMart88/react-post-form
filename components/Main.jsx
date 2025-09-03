@@ -33,16 +33,26 @@ function Main() {
   //creo l' handleSubmit in modo da poter inviare tramite post il nuovo oggetto
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(link, formAuthors).then((resp) => {
-      console.log("invio dei dati riuscito " + resp.data);
-      setformAuthors(initialFormAuthors);
-      // adesso setto l'alert
-      setAlert({
-        show: true,
-        status: "success",
-        text: "richiesta inviata con successo",
+    axios
+      .post(link, formAuthors)
+      .then((resp) => {
+        console.log("invio dei dati riuscito " + resp.data);
+        setformAuthors(initialFormAuthors);
+        // adesso setto l'alert
+        setAlert({
+          show: true,
+          status: "success",
+          text: "richiesta inviata con successo",
+        });
+      })
+      .catch((err) => {
+        console.log("Errore invio dati" + err);
+        setAlert({
+          show: true,
+          status: "error",
+          text: "Errore nell'invio della richiesta",
+        });
       });
-    });
   };
 
   return (
