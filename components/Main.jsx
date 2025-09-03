@@ -26,13 +26,19 @@ function Main() {
     };
     //uso il nuovo oggetto
     setformAuthors(newObj);
+
+    //creo l' handleSubmit in modo da poter inviare tramite post il nuovo oggetto
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      axios.post(link, formAuthors).then((resp) => {});
+    };
   };
 
   return (
     <div className="container m-5">
       <div className="row">
         {/* campo delle form input */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-3 col-8">
             <div className="my-3">Autore</div>
             <input
