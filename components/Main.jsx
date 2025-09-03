@@ -58,6 +58,12 @@ function Main() {
   return (
     <div className="container m-5">
       <div className="row">
+        {/* inserisco l'alert */}
+        {alert.show && (
+          <div className={`bg bg-${alert.status} m-3 text-center col-6`}>
+            {alert.text}
+          </div>
+        )}
         {/* campo delle form input */}
         <form onSubmit={handleSubmit}>
           <div className="mb-3 col-8">
