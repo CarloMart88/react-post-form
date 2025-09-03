@@ -8,7 +8,6 @@ const link = "https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts";
 function Main() {
   // creo l'oggetto con dentro i valori delle proprietà
   const initialFormAuthors = {
-    name: "",
     author: "",
     title: "",
     body: "",
@@ -35,21 +34,48 @@ function Main() {
         <form>
           <div className="mb-3 col-5">
             <div className="">Autore</div>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              name="author"
+              placeholder=""
+              value={formAuthors.author}
+              onChange={(e) => {
+                setformAuthors(e.target.value);
+              }}
+              className="form-control"
+            />
             <div id="" className="form-text">
               Per piacere riempire il campo indicato
             </div>
           </div>
           <div className="mb-3 col-5">
             <div className="">Titolo</div>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              name="title"
+              placeholder=""
+              value={formAuthors.title}
+              onChange={(e) => {
+                setformAuthors(e.target.value);
+              }}
+              className="form-control"
+            />
             <div id="" className="form-text">
               Per piacere riempire il campo indicato
             </div>
           </div>
           <div className="mb-5 col-5">
             <div className="">Articolo</div>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              name="body"
+              placeholder=""
+              value={formAuthors.body}
+              onChange={(e) => {
+                setformAuthors(e.target.value);
+              }}
+              className="form-control"
+            />
             <div className="form-text">
               Per piacere riempire il campo indicato
             </div>
