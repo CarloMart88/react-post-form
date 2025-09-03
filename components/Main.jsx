@@ -26,12 +26,15 @@ function Main() {
     };
     //uso il nuovo oggetto
     setformAuthors(newObj);
+  };
 
-    //creo l' handleSubmit in modo da poter inviare tramite post il nuovo oggetto
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      axios.post(link, formAuthors).then((resp) => {});
-    };
+  //creo l' handleSubmit in modo da poter inviare tramite post il nuovo oggetto
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(link, formAuthors).then((resp) => {
+      console.log("invio dei dati riuscito " + resp.data);
+      setformAuthors(initialFormAuthors);
+    });
   };
 
   return (
