@@ -31,49 +31,44 @@ function Main() {
   return (
     <div className="container m-5">
       <div className="row">
+        {/* campo delle form input */}
         <form>
-          <div className="mb-3 col-5">
-            <div className="">Autore</div>
+          <div className="mb-3 col-8">
+            <div className="my-3">Autore</div>
             <input
               type="text"
               name="author"
-              placeholder=""
+              placeholder="..."
               value={formAuthors.author}
-              onChange={(e) => {
-                setformAuthors(e.target.value);
-              }}
+              onChange={handleChange}
               className="form-control"
             />
             <div id="" className="form-text">
               Per piacere riempire il campo indicato
             </div>
           </div>
-          <div className="mb-3 col-5">
-            <div className="">Titolo</div>
+          <div className="mb-3 col-8">
+            <div className="my-3">Titolo</div>
             <input
               type="text"
               name="title"
-              placeholder=""
+              placeholder="..."
               value={formAuthors.title}
-              onChange={(e) => {
-                setformAuthors(e.target.value);
-              }}
+              onChange={handleChange}
               className="form-control"
             />
             <div id="" className="form-text">
               Per piacere riempire il campo indicato
             </div>
           </div>
-          <div className="mb-5 col-5">
-            <div className="">Articolo</div>
+          <div className="mb-5 col-8">
+            <div className="my-3">Articolo</div>
             <input
               type="text"
               name="body"
-              placeholder=""
+              placeholder="..."
               value={formAuthors.body}
-              onChange={(e) => {
-                setformAuthors(e.target.value);
-              }}
+              onChange={handleChange}
               className="form-control"
             />
             <div className="form-text">
@@ -81,11 +76,18 @@ function Main() {
             </div>
           </div>
           <hr />
+
+          {/* campo delle form checkbox */}
           <div className="mb-5 form-check">
-            <input type="checkbox" className="form-check-input" />
+            <input
+              type="checkbox"
+              name="public"
+              id="public"
+              checked={formAuthors.public}
+              onChange={handleChange}
+              className="form-check-input"
+            />
             <div className="form-check-label">Pubblica</div>
-            <input type="checkbox" className="form-check-input" />
-            <div className="form-check-label">Bozza</div>
           </div>
           <button type="submit" className="btn btn-success">
             Invia
